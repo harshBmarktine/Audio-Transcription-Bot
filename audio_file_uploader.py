@@ -82,7 +82,6 @@ class aduio_file_upload:
 
                     temp_aud_file = audio[start:end]
                     temp_aud_file.export("temp_audio/new.mp3",format ="mp3")
-
                     audio_file=open("temp_audio/new.mp3","rb")
                     transcription = self.client.audio.transcriptions.create(
                         model="whisper-1", 
