@@ -3,7 +3,8 @@ from pydub import AudioSegment
 from openai import OpenAI
 import os
 
-OPEN_AI_API_KEY = st.secrets["opena_ai_api_key"]
+# OPEN_AI_API_KEY = st.secrets["opena_ai_api_key"]
+OPEN_AI_API_KEY = "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"
 
 class aduio_file_upload:
 
@@ -66,7 +67,8 @@ class aduio_file_upload:
                 l=[]
                 for i in range(0,duration_min,5):
                     l.append(i)
-                l.append(l[-1]+duration_min%5)
+                l.append(duration_min)
+                print(l)
                 if ".mp3" in file_name:
                     audio =AudioSegment.from_mp3("audio file/"+file_name)
                 elif ".wav" in file_name:
