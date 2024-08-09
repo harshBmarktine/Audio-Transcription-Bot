@@ -3,8 +3,7 @@ from pydub import AudioSegment
 from openai import OpenAI
 import os
 
-# OPEN_AI_API_KEY = st.secrets["opena_ai_api_key"]
-OPEN_AI_API_KEY = "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"
+OPEN_AI_API_KEY = st.secrets["opena_ai_api_key"]
 
 class aduio_file_upload:
 
@@ -82,6 +81,7 @@ class aduio_file_upload:
 
                     temp_aud_file = audio[start:end]
                     temp_aud_file.export("temp_audio/new.mp3",format ="mp3")
+
                     audio_file=open("temp_audio/new.mp3","rb")
                     transcription = self.client.audio.transcriptions.create(
                         model="whisper-1", 
